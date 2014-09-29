@@ -1,4 +1,5 @@
 div.tweetHeader{
+	text-align: justify;
 	font-weight: bold;
     height: 20px;
     border-radius: 2px;
@@ -20,19 +21,34 @@ div.tweetBody{
 }
 
 div { 
-	width: 700px;
+	width: 500px;
 	border: 1px solid #000000;
 	background-color: #FFFFFF;
 }
 
 body {background-color: #9DFD64;}
 
-.center{
+.tweetPool{
 	margin-left: auto;
     margin-right: auto;
+}
+
+p.tweetText {
+	top: -30%
 }
 
 #readNew{
 	position: fixed;
 	text-align: center;
+}
+
+.alignTextLeft { float: left; }
+.alignTextRight { float: right; }
+
+p {
+	position: relative;
+	top: -60%;
+}
+#remover {
+	float: right;
 }
