@@ -1,0 +1,38 @@
+div.tweetHeader{
+	font-weight: bold;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #69D2E7;
+    color: #000000;
+	font-size: 80%;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 0.5;
+
+}
+
+div.tweetBody{
+	height: 60px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-size: 100%;
+	font-family: Gotham, Helvetica, Verdana, Arial;
+	opacity: 0.5;
+}
+
+div { 
+	width: 700px;
+	border: 1px solid #000000;
+	background-color: #FFFFFF;
+}
+
+body {background-color: #9DFD64;}
+
+.center{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#readNew{
+	position: fixed;
+	text-align: center;
+}
