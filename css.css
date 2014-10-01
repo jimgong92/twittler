@@ -38,8 +38,13 @@ p.tweetText {
 }
 
 #readNew{
-	position: fixed;
 	text-align: center;
+	position: fixed;
+}
+
+#home{
+	position: fixed;
+	top: 5%;
 }
 
 .alignTextLeft { float: left; }
@@ -49,6 +54,9 @@ p {
 	position: relative;
 	top: -60%;
 }
-#remover {
-	float: right;
+
+div.visitorInput {
+	width: 290px;
+	border: 0px solid #000000;
+	background-color: inherit; 
 }

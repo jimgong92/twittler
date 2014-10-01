@@ -1,16 +1,18 @@
 $(document).ready(function(){
+
     var $body = $('body');
     $body.html('');
 	
 	var index;	//stores number of tweets
-	var tweetsPosted = 0;
+	var tweetsPosted;
 	var currentUser;
 	
 	//updates index every second
 	var checkNew = function(instantCheck) {
 		index = streams.home.length - 1;
-		displayUpdateButton();
 		displayHomeButton();
+		displayUpdateButton();
+
 		//every second, refresh tweets to update time markers
 		$('.tweetPool').remove();
 		if (!instantCheck) {
@@ -46,15 +48,20 @@ $(document).ready(function(){
 		var $tweet = $('<div class = tweetPool></div>');
 		//tweet header - user and time
 		$tweet.append($("<div class = tweetHeader></div>"));
-		var $user = $("<p class = alignTextLeft> &nbsp;@" + tweet.user + "TWEET NUMBER: " + tweetIndex +"</p>");
+		var $user = $("<p class = alignTextLeft> &nbsp;@" + tweet.user + tweetIndex +"</p>");
+		
 		//ENABLE USER FILTER
 		$user.click(function() { 
 			currentUser = tweet.user;
 		});
-		
+		//user-friendly time display
 		var $tweetTime = $("<p class = alignTextRight>" + getTimeDisplay(tweet.created_at) + "&nbsp;</p>");
 		$tweet.find(".tweetHeader").append($user);
 		$tweet.find(".tweetHeader").append($tweetTime);
+		//Show full time stamp if user hovers mouse over time
+		$tweetTime.on('mouseenter', function() {
+			$(this).text(tweet.created_at.format() + " ")
+		});
 		//tweet body
 		$tweet.append($("<div class = tweetBody></div>"));
 		var $tweetText = $("<p class = tweetText> </br>&nbsp;" + tweet.message + "</p>");
@@ -86,11 +93,14 @@ $(document).ready(function(){
 			});
 		}
 	}
+	
+	checkNew();
+	update(true);
+	
 	/*
 		TO DO:
 		*Enable user tweet
 	*/
-	checkNew();
-	update(true);
+	//$body.prepend($("<form method=post>Enter Twittler Handle: <input name=username type=text><input type=Submit value=Enter></form>");
 	
 });
